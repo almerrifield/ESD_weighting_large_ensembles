@@ -1,0 +1,9 @@
+plots
+model_weighting/utils/
+model_weighting/core/diagnostics_lew.py
+model_weighting/configs/
+*.log
+.DS_Store
+._.DS_Store
+._LICENSE
+*.pyc
