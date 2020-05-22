@@ -23,9 +23,11 @@ ESD_paper_Fig3d.py
 
 
 For weighting code generated figures: model weighting with patch
+Environment: iacpy3_2019
 
-cd 
-python ESD_fig3_neu_box.py -p /path/ CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc -u -s box_NEU_9P.png
+cd model_weighting_clean/model_weighting/utils/
+python ESD_fig3_neu_box.py -p /**path**/ CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc -u -s box_NEU_9P.png
+python ESD_fig3_med_box.py -p /**path**/ CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc -u -s box_MED_9P.png
 
 
 
