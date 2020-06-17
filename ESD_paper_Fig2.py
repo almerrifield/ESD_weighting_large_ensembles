@@ -189,7 +189,7 @@ dsTobs1_adj_EU_djf = select_season_and_groupby_season_year(dsTobs1_adj_EU, "DJF"
 dsTobs1_adj_EU_jja = select_season_and_groupby_season_year(dsTobs1_adj_EU, "JJA").mean("time")
 
 #################################
-# Plot 50-Year Trends (update needed here)
+# Plot 50-Year Trends (!!update needed here!!)
 #################################
 
 def cos_lat_weighted_mean(ds):
@@ -199,7 +199,7 @@ def cos_lat_weighted_mean(ds):
   weighted_mean = ds_weighted.mean(('lon', 'lat'))
   return weighted_mean
 
-import utils_python.xarray as ut
+import linear_regression_functions as ut
 from scipy.stats import linregress
 
 
@@ -216,7 +216,7 @@ def plot_scatter(ds_dict, varn):
         if key in ['ERA20C']:
             plt.axvline(
                 cos_lat_weighted_mean(
-                    ut.trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50,
+                    ut.linear_trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50,
                 color=color_dict[key],
                 linestyle='solid',
                 linewidth=1,
@@ -224,15 +224,15 @@ def plot_scatter(ds_dict, varn):
         if key in ['BEST']:
             plt.axvline(
                 cos_lat_weighted_mean(
-                    ut.trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50,
+                    ut.linear_trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50,
                 color=color_dict[key],
                 linestyle='dashed',
                 linewidth=1,
                 label=key)
         if key in ['CESM','MPI','CanESM','CMIP5']:
             plt.scatter(
-                cos_lat_weighted_mean(ut.trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50,
-                cos_lat_weighted_mean(ut.trend(ds_dict[key][varn].sel(year=slice(2050, 2099)),time_name='year')).data * 50,
+                cos_lat_weighted_mean(ut.linear_trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50,
+                cos_lat_weighted_mean(ut.linear_trend(ds_dict[key][varn].sel(year=slice(2050, 2099)),time_name='year')).data * 50,
                 s=10,
                 color=color_dict[key],
                 label=key,
@@ -247,8 +247,8 @@ def plot_fit(ds_dict, varn, keys=None, **kwargs):
 
     xx, yy = [], []
     for key in keys:
-        xx += list(cos_lat_weighted_mean(ut.trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50)
-        yy += list(cos_lat_weighted_mean(ut.trend(ds_dict[key][varn].sel(year=slice(2050, 2099)),time_name='year')).data * 50)
+        xx += list(cos_lat_weighted_mean(ut.linear_trend(ds_dict[key][varn].sel(year=slice(1960, 2009)),time_name='year')).data * 50)
+        yy += list(cos_lat_weighted_mean(ut.linear_trend(ds_dict[key][varn].sel(year=slice(2050, 2099)),time_name='year')).data * 50)
 
     a, b, r_value, p_value, std_err = linregress(xx, yy)
     f = lambda x: a*x + b

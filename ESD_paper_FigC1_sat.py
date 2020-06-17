@@ -118,7 +118,7 @@ dsTobs_NEU_djf = select_season_and_groupby_season_year(dsTobs_NEU, "DJF").mean('
 dsTobs1_NEU_djf = select_season_and_groupby_season_year(dsTobs1_NEU, "DJF").mean('time')
 
 #################################
-# Plot 20-Year CLIM (update needed here)
+# Plot 20-Year CLIM (!!update needed here!!)
 #################################
 
 def cos_lat_weighted_mean(ds):
@@ -128,7 +128,7 @@ def cos_lat_weighted_mean(ds):
   weighted_mean = ds_weighted.mean(('lon', 'lat'))
   return weighted_mean
 
-import utils_python.xarray as ut
+import linear_regression_functions as ut
 from scipy.stats import linregress
 
 def plot_scatter_CLIM(ds_dict, varn, year_start, year_end, fut_year_start, fut_year_end):
@@ -230,7 +230,7 @@ def cos_lat_weighted_mean(ds):
   weighted_mean = ds_weighted.mean(('lon', 'lat'))
   return weighted_mean
 
-import utils_python.xarray_lew as ut
+import linear_regression_functions as ut
 from scipy.stats import linregress
 
 def plot_scatter_STD(ds_dict, varn, year_start, year_end, fut_year_start, fut_year_end):
@@ -244,7 +244,7 @@ def plot_scatter_STD(ds_dict, varn, year_start, year_end, fut_year_start, fut_ye
     for key in ds_dict.keys():
         if key in ['ERA20C']:
             plt.axvline(
-                cos_lat_weighted_mean(ut.detrend(
+                cos_lat_weighted_mean(ut.linear_detrend(
                     ds_dict[key][varn].sel(year=slice(year_start, year_end)),time_name='year').std('year')).data,
                 color=color_dict[key],
                 linestyle='solid',
@@ -252,7 +252,7 @@ def plot_scatter_STD(ds_dict, varn, year_start, year_end, fut_year_start, fut_ye
                 label=key)
         if key in ['BEST']:
             plt.axvline(
-                cos_lat_weighted_mean(ut.detrend(
+                cos_lat_weighted_mean(ut.linear_detrend(
                     ds_dict[key][varn].sel(year=slice(year_start, year_end)),time_name='year').std('year')).data,
                 color=color_dict[key],
                 linestyle='dashed',
@@ -260,9 +260,9 @@ def plot_scatter_STD(ds_dict, varn, year_start, year_end, fut_year_start, fut_ye
                 label=key)
         if key in ['CESM','MPI','CanESM','CMIP5']:
             plt.scatter(
-                cos_lat_weighted_mean(ut.detrend(
+                cos_lat_weighted_mean(ut.linear_detrend(
                     ds_dict[key][varn].sel(year=slice(year_start, year_end)),time_name='year').std('year')).data,
-                cos_lat_weighted_mean(ut.detrend(
+                cos_lat_weighted_mean(ut.linear_detrend(
                     ds_dict[key][varn].sel(year=slice(fut_year_start, fut_year_end)),time_name='year').std('year')).data,
                 s=5,
                 color=color_dict[key],
@@ -277,8 +277,8 @@ def plot_fit_STD(ds_dict, varn, year_start, year_end, fut_year_start, fut_year_e
 
     xx, yy = [], []
     for key in keys:
-        xx += list(cos_lat_weighted_mean(ut.detrend(ds_dict[key][varn].sel(year=slice(year_start, year_end)),time_name='year').std('year')).data)
-        yy += list(cos_lat_weighted_mean(ut.detrend(ds_dict[key][varn].sel(year=slice(fut_year_start, fut_year_end)),time_name='year').std('year')).data)
+        xx += list(cos_lat_weighted_mean(ut.linear_detrend(ds_dict[key][varn].sel(year=slice(year_start, year_end)),time_name='year').std('year')).data)
+        yy += list(cos_lat_weighted_mean(ut.linear_detrend(ds_dict[key][varn].sel(year=slice(fut_year_start, fut_year_end)),time_name='year').std('year')).data)
 
     a, b, r_value, p_value, std_err = linregress(xx, yy)
     f = lambda x: a*x + b
