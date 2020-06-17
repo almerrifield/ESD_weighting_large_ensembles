@@ -21,9 +21,9 @@ For matlab generated figures: Matlab 2019a
 ESD_paper_Fig3c.py
 ESD_paper_Fig3d.py
 
-ESD_paper_Fig4a.py
-ESD_paper_Fig4b.py
-ESD_paper_Fig4c.py
+ESD_paper_Fig4.py
+ESD_paper_FigB1.py
+ESD_paper_FigB2.py
 
 
 For weighting code generated figures: model weighting with patch
