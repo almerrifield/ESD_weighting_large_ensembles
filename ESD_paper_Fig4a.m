@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % load file
-filename = ['CMIP5-ALL_neu_9P_v2.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
 figure,

@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % load file
-filename = ['CMIP5-ALL_med_ANN_CLIM_v0.nc'];
+filename = ['CMIP5-ALL_ANN_CLIM_v0.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
 figure,

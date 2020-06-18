@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % load file
-filename = ['CMIP5-ALL_neu_9P_v2.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
 
 weights_all = ncread(filename,'weights'); % RMSE weighting
 weights_q_all = ncread(filename,'weights_q'); % Performance weighting

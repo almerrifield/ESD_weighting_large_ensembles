@@ -1,11 +1,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Figure 4 - DJF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
 
 % load file
-filename = ['CMIP5-ALL_neu_9P_v2.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
+figure,
 subplot(131),
 bar(0.1, 2,'BarWidth',0.02,'FaceColor',[0.80,0.80,0.80])
 hold on
@@ -121,7 +123,7 @@ xticks([])
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % load file
-filename = ['CMIP5-ALL_med_9P_v0.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
 subplot(132),
@@ -239,7 +241,7 @@ xticks([])
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % load file
-filename = ['CMIP5-ALL_med_ANN_CLIM_v0.nc'];
+filename = ['CMIP5-ALL_ANN_CLIM_v0.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
 subplot(133),

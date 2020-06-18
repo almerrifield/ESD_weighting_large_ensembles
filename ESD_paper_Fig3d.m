@@ -2,9 +2,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Figure 3 - JJA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
 
 % load file
-filename = ['CMIP5-ALL_med_9P_v0.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
 
 weights_all = ncread(filename,'weights'); % RMSE weighting
 weights_q_all = ncread(filename,'weights_q'); % Performance weighting

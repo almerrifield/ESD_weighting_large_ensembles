@@ -12,7 +12,6 @@ import cdo
 import datetime
 from scipy import signal, stats
 
-
 def linear_detrend(ds,axis='time'):
 	""" remove linear trend from data """
 	def detrend(data):
