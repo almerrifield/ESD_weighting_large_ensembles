@@ -1,8 +1,10 @@
+addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
+
 % load file
-filename = ['CMIP5-ALL_neu_9P_v2.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
 delta_q_neu = ncread(filename,'delta_q');
 
-filename = ['CMIP5-ALL_med_9P_v0.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
 delta_q_med = ncread(filename,'delta_q');
 
 figure,

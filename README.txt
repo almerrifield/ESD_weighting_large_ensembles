@@ -4,6 +4,8 @@
 
 #######################################################
 
+** Source files updated after incorrect shapefile found (DA.txt) **
+
 For basic versions of python figures generated (e.g. ESD_paper_Fig1.py)
 Environment: iacpy3_2020
 
@@ -30,15 +32,5 @@ For weighting code generated figures: model weighting with patch
 Environment: iacpy3_2019
 
 cd model_weighting_paper_version/model_weighting/utils/
-python ESD_fig3_neu_box.py -p /**path**/ CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc CMIP5_neu_9P_v2.nc CMIP5-ALL_neu_9P_v2.nc -u -s box_NEU_9P.png
-python ESD_fig3_med_box.py -p /**path**/ CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc CMIP5_med_9P_v0.nc CMIP5-ALL_med_9P_v0.nc -u -s box_MED_9P.png
-
-
-
-
-
-
-
-
-
-
+python ESD_fig3_neu_box_DA_fix.py -p /**path**/ CMIP5_neu_9P_DA_fix.nc CMIP5-ALL_neu_9P_DA_fix.nc CMIP5_neu_9P_DA_fix.nc CMIP5-ALL_neu_9P_DA_fix.nc CMIP5_neu_9P_DA_fix.nc CMIP5-ALL_neu_9P_DA_fix.nc CMIP5_neu_9P_DA_fix.nc CMIP5-ALL_neu_9P_DA_fix.nc CMIP5_neu_9P_DA_fix.nc CMIP5-ALL_neu_9P_DA_fix.nc -u -s box_NEU_9P_DA_fix.png
+python ESD_fig3_med_box_DA_fix.py -p /**path**/ CMIP5_med_9P_DA_fix.nc CMIP5-ALL_med_9P_DA_fix.nc CMIP5_med_9P_DA_fix.nc CMIP5-ALL_med_9P_DA_fix.nc CMIP5_med_9P_DA_fix.nc CMIP5-ALL_med_9P_DA_fix.nc CMIP5_med_9P_DA_fix.nc CMIP5-ALL_med_9P_DA_fix.nc CMIP5_med_9P_DA_fix.nc CMIP5-ALL_med_9P_DA_fix.nc -u -s box_MED_9P_DA_fix.png

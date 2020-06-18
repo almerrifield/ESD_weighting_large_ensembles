@@ -1,10 +1,11 @@
+addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
 % load files
-filename = ['CMIP5_neu_9P_v2.nc']; % s2
+filename = ['CMIP5_neu_9P_DA_fix.nc']; % s2
 sigma_i_neu = ncread(filename,'sigma_i');
 delta_i_neu = ncread(filename,'delta_i');
 
 % load files
-filename = ['CMIP5-ALL_neu_9P_v2.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
 sigma_i_all_neu = ncread(filename,'sigma_i');
 delta_i_all_neu = ncread(filename,'delta_i');
 
@@ -111,12 +112,12 @@ title('DJF NEU, nine predictors')
 
 
 % load files
-filename = ['CMIP5_med_9P_v0.nc']; % s2
+filename = ['CMIP5_med_9P_DA_fix.nc']; % s2
 sigma_i_med = ncread(filename,'sigma_i');
 delta_i_med = ncread(filename,'delta_i');
 
 % load files
-filename = ['CMIP5-ALL_med_9P_v0.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
 sigma_i_all_med = ncread(filename,'sigma_i');
 delta_i_all_med = ncread(filename,'delta_i');
 
@@ -221,12 +222,12 @@ yticklabels('')
 title('JJA MED, nine predictors')
 
 % load files
-filename = ['CMIP5_med_ANN_CLIM_v0.nc']; % s2
+filename = ['CMIP5_ANN_CLIM_v0.nc']; % s2
 sigma_i_med = ncread(filename,'sigma_i');
 delta_i_med = ncread(filename,'delta_i');
 
 % load files
-filename = ['CMIP5-ALL_med_ANN_CLIM_v0.nc'];
+filename = ['CMIP5-ALL_ANN_CLIM_v0.nc'];
 sigma_i_all_med = ncread(filename,'sigma_i');
 delta_i_all_med = ncread(filename,'delta_i');
 

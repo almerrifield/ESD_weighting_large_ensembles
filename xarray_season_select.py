@@ -21,9 +21,6 @@ def groupby_season_year(season_select, season):
                       'SON']:  # checks that season is valid
         raise NotImplementedError(season)
     times = season_select.coords['time'].data
-    # for t in times:  # checks that season has be pre-selected (i.e., just JJA in dataset)
-    #     if t.season != season:
-    #         raise RuntimeError('More than one season found!')
     if season != 'DJF':
         return season_select.groupby("time.year")
     # If it's DJF...
