@@ -7,7 +7,7 @@ delta_q_neu = ncread(filename,'delta_q');
 filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
 delta_q_med = ncread(filename,'delta_q');
 
-figure,
+
 subplot(211),
 bar(sort(delta_q_neu),'b')
 hold on
@@ -30,6 +30,8 @@ end
 
 xticklabels('')
 ylim([0, 1.4])
+plot([0 288],[0.32 0.32],'w','LineWidth',5)
+plot([0 288],[0.32 0.32],'k','LineWidth',3)
 ylabel('Normalized RMSE distance from observations')
 title('DJF NEU D_i (nine predictors)')
 
@@ -55,6 +57,8 @@ end
 
 xticklabels('')
 ylim([0, 1.4])
+plot([0 288],[0.4 0.4],'w','LineWidth',5)
+plot([0 288],[0.4 0.4],'k','LineWidth',3)
 ylabel('Normalized RMSE distance from observations')
 title('JJA MED D_i (nine predictors)')
 
