@@ -205,39 +205,50 @@ dsTobs1_MED_jja_ts = cos_lat_weighted_mean(dsTobs1_MED_jja.sel(year=slice('1950'
 dsTobs_NEU_djf_cat = xr.concat([dsTobs_NEU_djf_ts, dsTobs1_NEU_djf_ts.drop(['clim','tas_raw'])], dim='member')
 
 xc = dsTc_NEU_djf_ts.year
-# yupc = dsTc_NEU_djf_ts.tas_C.mean('member') +  dsTc_NEU_djf_ts.tas_C.std('member')
-# ydnc = dsTc_NEU_djf_ts.tas_C.mean('member') -  dsTc_NEU_djf_ts.tas_C.std('member')
+yupc = dsTc_NEU_djf_ts.tas_C.mean('member') +  dsTc_NEU_djf_ts.tas_C.std('member')
+ydnc = dsTc_NEU_djf_ts.tas_C.mean('member') -  dsTc_NEU_djf_ts.tas_C.std('member')
 yupc = np.quantile(dsTc_NEU_djf_ts.tas_C,0.95,1)
 ydnc = np.quantile(dsTc_NEU_djf_ts.tas_C,0.05,1)
 
 x = dsT_NEU_djf_ts.year
-# yup = dsT_NEU_djf_ts.tas_C.mean('member') +  dsT_NEU_djf_ts.tas_C.std('member')
-# ydn = dsT_NEU_djf_ts.tas_C.mean('member') -  dsT_NEU_djf_ts.tas_C.std('member')
+yup = dsT_NEU_djf_ts.tas_C.mean('member') +  dsT_NEU_djf_ts.tas_C.std('member')
+ydn = dsT_NEU_djf_ts.tas_C.mean('member') -  dsT_NEU_djf_ts.tas_C.std('member')
 yup = np.quantile(dsT_NEU_djf_ts.tas_C,0.95,1)
 ydn = np.quantile(dsT_NEU_djf_ts.tas_C,0.05,1)
 
 xm = dsTm_NEU_djf_ts.year
-# yupm = dsTm_NEU_djf_ts.tas_C.mean('member') +  dsTm_NEU_djf_ts.tas_C.std('member')
-# ydnm = dsTm_NEU_djf_ts.tas_C.mean('member') -  dsTm_NEU_djf_ts.tas_C.std('member')
+yupm = dsTm_NEU_djf_ts.tas_C.mean('member') +  dsTm_NEU_djf_ts.tas_C.std('member')
+ydnm = dsTm_NEU_djf_ts.tas_C.mean('member') -  dsTm_NEU_djf_ts.tas_C.std('member')
 yupm = np.quantile(dsTm_NEU_djf_ts.tas_C,0.95,1)
 ydnm = np.quantile(dsTm_NEU_djf_ts.tas_C,0.05,1)
 
 xn = dsTn_NEU_djf_ts.year
-# yupn = dsTn_NEU_djf_ts.tas_C.mean('member') +  dsTn_NEU_djf_ts.tas_C.std('member')
-# ydnn = dsTn_NEU_djf_ts.tas_C.mean('member') -  dsTn_NEU_djf_ts.tas_C.std('member')
+yupn = dsTn_NEU_djf_ts.tas_C.mean('member') +  dsTn_NEU_djf_ts.tas_C.std('member')
+ydnn = dsTn_NEU_djf_ts.tas_C.mean('member') -  dsTn_NEU_djf_ts.tas_C.std('member')
 yupn = np.quantile(dsTn_NEU_djf_ts.tas_C,0.95,1)
 ydnn = np.quantile(dsTn_NEU_djf_ts.tas_C,0.05,1)
 
 plt.fill_between(xc,ydnc,yupc, alpha=0.1, color="b",label="CMIP5 (N=88)")
+plt.plot(x,ydnc, alpha=0.3,linewidth=0.3, linestyle="solid", color="b",label="CMIP5 (N=88)")
+plt.plot(x,yupc, alpha=0.3,linewidth=0.3, linestyle="solid", color="b",label="CMIP5 (N=88)")
 plt.plot(dsTc_NEU_djf_ts.year,dsTc_NEU_djf_ts.tas_C.mean('member'),linewidth=2, color="w")
 plt.plot(dsTc_NEU_djf_ts.year,dsTc_NEU_djf_ts.tas_C.mean('member'),alpha=0.8, color="b")
+
 plt.fill_between(x,ydn,yup, alpha=0.1, color="r",label="CESM1.2.2 (N=50)")
+# plt.plot(x,ydn, alpha=0.5,linewidth=0.5, linestyle="solid", color="r",label="CESM1.2.2 (N=50)")
+# plt.plot(x,yup, alpha=0.5,linewidth=0.5, linestyle="solid", color="r",label="CESM1.2.2 (N=50)")
 plt.plot(dsT_NEU_djf_ts.year,dsT_NEU_djf_ts.tas_C.mean('member'),linewidth=2, color="w")
 plt.plot(dsT_NEU_djf_ts.year,dsT_NEU_djf_ts.tas_C.mean('member'),alpha=0.8, color="r")
+
 plt.fill_between(xm,ydnm,yupm, alpha=0.2, color="g",label="MPI-GE (N=100)")
+# plt.plot(x,ydnm, alpha=0.5,linewidth=0.5, linestyle="solid", color="g",label="MPI-GE (N=100)")
+# plt.plot(x,yupm, alpha=0.5,linewidth=0.5, linestyle="solid", color="g",label="MPI-GE (N=100)")
 plt.plot(dsTm_NEU_djf_ts.year,dsTm_NEU_djf_ts.tas_C.mean('member'),linewidth=2, color="w")
 plt.plot(dsTm_NEU_djf_ts.year,dsTm_NEU_djf_ts.tas_C.mean('member'),alpha=0.8, color="g")
+
 plt.fill_between(xn,ydnn,yupn, alpha=0.3, color="y",label="CanESM2 (N=50)")
+# plt.plot(x,ydnn, alpha=0.5,linewidth=0.5, linestyle="solid", color="y",label="CanESM2 (N=50)")
+# plt.plot(x,yupn, alpha=0.5,linewidth=0.5, linestyle="solid", color="y",label="CanESM2 (N=50)")
 plt.plot(dsTn_NEU_djf_ts.year,dsTn_NEU_djf_ts.tas_C.mean('member'),linewidth=2, color="w")
 plt.plot(dsTn_NEU_djf_ts.year,dsTn_NEU_djf_ts.tas_C.mean('member'),alpha=0.8, color="y")
 plt.plot(dsTobs_NEU_djf_ts.year,dsTobs_NEU_djf_ts.tas_C,"k",alpha=0.4,linewidth=1,linestyle="solid",label="OBS:ERA-20C")
@@ -247,7 +258,7 @@ plt.plot(dsTobs_NEU_djf_cat.year,dsTobs_NEU_djf_cat.tas_C.mean('member'),alpha=1
 plt.xlabel('Year')
 plt.xlim([1950,2099])
 plt.ylabel('DJF NEU SAT (˚C)')
-plt.ylim([-14,3])
+#plt.ylim([-13,3])
 plt.savefig('ESD_fig1a', dpi=300)
 plt.close()
 
@@ -283,6 +294,8 @@ ydnn = np.quantile(dsTn_MED_jja_ts.tas_C,0.05,1)
 xo = dsTobs_MED_jja_cat.year
 
 plt.fill_between(xc,ydnc,yupc, alpha=0.1, color="b",label="CMIP5 (N=88)")
+plt.plot(x,ydnc, alpha=0.3,linewidth=0.3, linestyle="solid", color="b",label="CMIP5 (N=88)")
+plt.plot(x,yupc, alpha=0.3,linewidth=0.3, linestyle="solid", color="b",label="CMIP5 (N=88)")
 plt.plot(dsTc_MED_jja_ts.year,dsTc_MED_jja_ts.tas_C.mean('member'),linewidth=2, color="w")
 plt.plot(dsTc_MED_jja_ts.year,dsTc_MED_jja_ts.tas_C.mean('member'),alpha=0.8, color="b")
 plt.fill_between(x,ydn,yup, alpha=0.1, color="r",label="CESM1.2.2-LE (N=50)")
@@ -300,7 +313,7 @@ plt.plot(dsTobs_MED_jja_cat.year,dsTobs_MED_jja_cat.tas_C.mean('member'),linewid
 plt.plot(dsTobs_MED_jja_cat.year,dsTobs_MED_jja_cat.tas_C.mean('member'),alpha=1, color="k",label="MEAN OBS")
 plt.xlabel('Year')
 plt.xlim([1950,2099])
-plt.ylim([21,35])
+#plt.ylim([22,35])
 plt.ylabel('JJA MED SAT (˚C)')
 plt.savefig('ESD_fig1b', dpi=300)
 plt.close()
