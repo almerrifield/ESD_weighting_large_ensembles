@@ -34,16 +34,16 @@ Environment: iacpy3_2019
 cd model_weighting_paper_version/model_weighting/utils/
 python ESD_fig3_neu_box_DA_fix_best.py -p /**path**/ CMIP5_neu_9P_DA_fix_best.nc CMIP5-ALL_neu_9P_DA_fix_best.nc CMIP5_neu_9P_DA_fix_best.nc CMIP5-ALL_neu_9P_DA_fix_best.nc CMIP5_neu_9P_DA_fix_best.nc CMIP5-ALL_neu_9P_DA_fix_best.nc CMIP5_neu_9P_DA_fix_best.nc CMIP5-ALL_neu_9P_DA_fix_best.nc CMIP5_neu_9P_DA_fix_best.nc CMIP5-ALL_neu_9P_DA_fix_best.nc -u -s box_NEU_9P_DA_fix_best.png
 
-python ESD_figB3i.py -p /home/meranna/python/esd_weighting_large_ensembles/ CMIP5_neu_9P_005.nc CMIP5_neu_9P_01.nc CMIP5_neu_9P_02.nc  CMIP5_neu_9P_03.nc CMIP5_neu_9P_04.nc CMIP5_neu_9P_05.nc  CMIP5_neu_9P_06.nc CMIP5_neu_9P_07.nc CMIP5_neu_9P_08.nc -u -s figB3ai.png
+python ESD_figB3i.py -p /**path**/ CMIP5_neu_9P_005.nc CMIP5_neu_9P_01.nc CMIP5_neu_9P_02.nc  CMIP5_neu_9P_03.nc CMIP5_neu_9P_04.nc CMIP5_neu_9P_05.nc  CMIP5_neu_9P_06.nc CMIP5_neu_9P_07.nc CMIP5_neu_9P_08.nc -u -s figB3ai.png
 
-python ESD_figB3ii.py -p /home/meranna/python/esd_weighting_large_ensembles/ CMIP5-ALL_neu_9P_005.nc CMIP5-ALL_neu_9P_01.nc CMIP5-ALL_neu_9P_02.nc  CMIP5-ALL_neu_9P_03.nc CMIP5-ALL_neu_9P_04.nc CMIP5-ALL_neu_9P_05.nc  CMIP5-ALL_neu_9P_06.nc CMIP5-ALL_neu_9P_07.nc CMIP5-ALL_neu_9P_08.nc -u -s figB3aii.png
+python ESD_figB3ii.py -p /**path**/ CMIP5-ALL_neu_9P_005.nc CMIP5-ALL_neu_9P_01.nc CMIP5-ALL_neu_9P_02.nc  CMIP5-ALL_neu_9P_03.nc CMIP5-ALL_neu_9P_04.nc CMIP5-ALL_neu_9P_05.nc  CMIP5-ALL_neu_9P_06.nc CMIP5-ALL_neu_9P_07.nc CMIP5-ALL_neu_9P_08.nc -u -s figB3aii.png
 
 
 python ESD_fig3_med_box_DA_fix_best.py -p /**path**/ CMIP5_med_9P_DA_fix_best.nc CMIP5-ALL_med_9P_DA_fix_best.nc CMIP5_med_9P_DA_fix_best.nc CMIP5-ALL_med_9P_DA_fix_best.nc CMIP5_med_9P_DA_fix_best.nc CMIP5-ALL_med_9P_DA_fix_best.nc CMIP5_med_9P_DA_fix_best.nc CMIP5-ALL_med_9P_DA_fix_best.nc CMIP5_med_9P_DA_fix_best.nc CMIP5-ALL_med_9P_DA_fix_best.nc -u -s box_MED_9P_DA_fix_best.png
 
-python ESD_figB3i.py -p /home/meranna/python/esd_weighting_large_ensembles/ CMIP5_med_9P_005.nc CMIP5_med_9P_01.nc CMIP5_med_9P_02.nc  CMIP5_med_9P_03.nc CMIP5_med_9P_04.nc CMIP5_med_9P_05.nc  CMIP5_med_9P_06.nc CMIP5_med_9P_07.nc CMIP5_med_9P_08.nc -u -s figB3bi.png
+python ESD_figB3i.py -p /**path**/ CMIP5_med_9P_005.nc CMIP5_med_9P_01.nc CMIP5_med_9P_02.nc  CMIP5_med_9P_03.nc CMIP5_med_9P_04.nc CMIP5_med_9P_05.nc  CMIP5_med_9P_06.nc CMIP5_med_9P_07.nc CMIP5_med_9P_08.nc -u -s figB3bi.png
 
 
-python ESD_figB3ii.py -p /home/meranna/python/esd_weighting_large_ensembles/  CMIP5-ALL_med_9P_005.nc CMIP5-ALL_med_9P_01.nc CMIP5-ALL_med_9P_02.nc  CMIP5-ALL_med_9P_03.nc CMIP5-ALL_med_9P_04.nc CMIP5-ALL_med_9P_05.nc  CMIP5-ALL_med_9P_06.nc CMIP5-ALL_med_9P_07.nc CMIP5-ALL_med_9P_08.nc -u -s figB3bii.png
+python ESD_figB3ii.py -p /**path**/  CMIP5-ALL_med_9P_005.nc CMIP5-ALL_med_9P_01.nc CMIP5-ALL_med_9P_02.nc  CMIP5-ALL_med_9P_03.nc CMIP5-ALL_med_9P_04.nc CMIP5-ALL_med_9P_05.nc  CMIP5-ALL_med_9P_06.nc CMIP5-ALL_med_9P_07.nc CMIP5-ALL_med_9P_08.nc -u -s figB3bii.png
 
 
