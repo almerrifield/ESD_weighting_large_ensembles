@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Figure 4 - DJF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
+addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/
 
 % load file
-filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix_best.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
 figure,
@@ -118,12 +118,12 @@ plot([0.85 0.87],[weights_i_all(288) weights_i_all(288)],'b','linewidth',1)
 ylabel('Independence scaling')
 xticks([])
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
 % Figure 4 - JJA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % load file
-filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix_best.nc'];
 weights_i_all = ncread(filename,'weights_i');
 
 subplot(132),

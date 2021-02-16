@@ -1,11 +1,11 @@
 addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
 % load files
-filename = ['CMIP5_neu_9P_DA_fix.nc']; % s2
+filename = ['CMIP5_neu_9P_DA_fix_best.nc']; % s2
 sigma_i_neu = ncread(filename,'sigma_i');
 delta_i_neu = ncread(filename,'delta_i');
 
 % load files
-filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
+filename = ['CMIP5-ALL_neu_9P_DA_fix_best.nc'];
 sigma_i_all_neu = ncread(filename,'sigma_i');
 delta_i_all_neu = ncread(filename,'delta_i');
 
@@ -112,12 +112,12 @@ title('DJF NEU, nine predictors')
 
 
 % load files
-filename = ['CMIP5_med_9P_DA_fix.nc']; % s2
+filename = ['CMIP5_med_9P_DA_fix_best.nc']; % s2
 sigma_i_med = ncread(filename,'sigma_i');
 delta_i_med = ncread(filename,'delta_i');
 
 % load files
-filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix_best.nc'];
 sigma_i_all_med = ncread(filename,'sigma_i');
 delta_i_all_med = ncread(filename,'delta_i');
 

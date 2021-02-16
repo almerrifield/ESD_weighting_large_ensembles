@@ -5,7 +5,7 @@
 addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
 
 % load file
-filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
+filename = ['CMIP5-ALL_med_9P_DA_fix_best.nc'];
 
 weights_all = ncread(filename,'weights'); % RMSE weighting
 weights_q_all = ncread(filename,'weights_q'); % Performance weighting
@@ -203,4 +203,5 @@ bar(24,sum(weights_all([1:13,64:81,132:181,282:288])),'b','EdgeColor','none')
 ylabel('Fraction of Total Weight')
 xticks([2.5,7.5,12.5,17.5,22.5])
 xticklabels({'equal','perf.','1/N ic','1/N mc','RMSE'})
+ylim([0,1])
 

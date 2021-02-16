@@ -69,6 +69,7 @@ end
 % compute target
 
 dis_all = nan(47,201);
+weighted_all = nan(47,201);
 
 for jj = 1:47
     obs_ind = jj;
@@ -95,6 +96,7 @@ for jj = 1:47
         weighted_dist(ii) = sum(perf_metric(:,ii).*tas_pred)./sum(perf_metric(:,ii));
     end
     
+    weighted_all(obs_ind,:) = weighted_dist;
     dis_all(obs_ind,:) = abs(tas_o-weighted_dist);
     [a,i] = min(abs(tas_o-weighted_dist));
 
@@ -102,13 +104,25 @@ for jj = 1:47
     sigma_best(obs_ind) = sigma_q(i);
     
    
-    figure,
-    plot(sigma_q,weighted_dist)
-    hold on
-    plot([0 2],[tas_o tas_o])
-    plot([sigma_q(i) sigma_q(i)],[0 10])
-    title(model_ensemble(jj))
+%     figure,
+%     plot(sigma_q,weighted_dist)
+%     hold on
+%     plot([0 2],[tas_o tas_o])
+%     plot([sigma_q(i) sigma_q(i)],[0 10])
+%     title(model_ensemble(jj))
 end
+
+tas_diff_rep = repmat(tas_diff,1,201);
+for ii = 1:length(sigma_q)
+    c_all = corrcoef(tas_diff_rep(:,ii),weighted_all(:,ii));
+    corr_all(ii) = c_all(1,2);
+end
+
+[a,i] = max(corr_all);
+figure
+plot(sigma_q,corr_all)
+hold on
+plot([sigma_q(i) sigma_q(i)],[-1 1])
 
 % choices for picking sigma_best (adjust here)
 

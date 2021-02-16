@@ -205,26 +205,26 @@ dsTobs1_MED_jja_ts = cos_lat_weighted_mean(dsTobs1_MED_jja.sel(year=slice('1950'
 dsTobs_NEU_djf_cat = xr.concat([dsTobs_NEU_djf_ts, dsTobs1_NEU_djf_ts.drop(['clim','tas_raw'])], dim='member')
 
 xc = dsTc_NEU_djf_ts.year
-yupc = dsTc_NEU_djf_ts.tas_C.mean('member') +  dsTc_NEU_djf_ts.tas_C.std('member')
-ydnc = dsTc_NEU_djf_ts.tas_C.mean('member') -  dsTc_NEU_djf_ts.tas_C.std('member')
+# yupc = dsTc_NEU_djf_ts.tas_C.mean('member') +  dsTc_NEU_djf_ts.tas_C.std('member')
+# ydnc = dsTc_NEU_djf_ts.tas_C.mean('member') -  dsTc_NEU_djf_ts.tas_C.std('member')
 yupc = np.quantile(dsTc_NEU_djf_ts.tas_C,0.95,1)
 ydnc = np.quantile(dsTc_NEU_djf_ts.tas_C,0.05,1)
 
 x = dsT_NEU_djf_ts.year
-yup = dsT_NEU_djf_ts.tas_C.mean('member') +  dsT_NEU_djf_ts.tas_C.std('member')
-ydn = dsT_NEU_djf_ts.tas_C.mean('member') -  dsT_NEU_djf_ts.tas_C.std('member')
+# yup = dsT_NEU_djf_ts.tas_C.mean('member') +  dsT_NEU_djf_ts.tas_C.std('member')
+# ydn = dsT_NEU_djf_ts.tas_C.mean('member') -  dsT_NEU_djf_ts.tas_C.std('member')
 yup = np.quantile(dsT_NEU_djf_ts.tas_C,0.95,1)
 ydn = np.quantile(dsT_NEU_djf_ts.tas_C,0.05,1)
 
 xm = dsTm_NEU_djf_ts.year
-yupm = dsTm_NEU_djf_ts.tas_C.mean('member') +  dsTm_NEU_djf_ts.tas_C.std('member')
-ydnm = dsTm_NEU_djf_ts.tas_C.mean('member') -  dsTm_NEU_djf_ts.tas_C.std('member')
+# yupm = dsTm_NEU_djf_ts.tas_C.mean('member') +  dsTm_NEU_djf_ts.tas_C.std('member')
+# ydnm = dsTm_NEU_djf_ts.tas_C.mean('member') -  dsTm_NEU_djf_ts.tas_C.std('member')
 yupm = np.quantile(dsTm_NEU_djf_ts.tas_C,0.95,1)
 ydnm = np.quantile(dsTm_NEU_djf_ts.tas_C,0.05,1)
 
 xn = dsTn_NEU_djf_ts.year
-yupn = dsTn_NEU_djf_ts.tas_C.mean('member') +  dsTn_NEU_djf_ts.tas_C.std('member')
-ydnn = dsTn_NEU_djf_ts.tas_C.mean('member') -  dsTn_NEU_djf_ts.tas_C.std('member')
+# yupn = dsTn_NEU_djf_ts.tas_C.mean('member') +  dsTn_NEU_djf_ts.tas_C.std('member')
+# ydnn = dsTn_NEU_djf_ts.tas_C.mean('member') -  dsTn_NEU_djf_ts.tas_C.std('member')
 yupn = np.quantile(dsTn_NEU_djf_ts.tas_C,0.95,1)
 ydnn = np.quantile(dsTn_NEU_djf_ts.tas_C,0.05,1)
 
