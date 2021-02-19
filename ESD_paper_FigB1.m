@@ -1,4 +1,9 @@
-addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
+%% for paper version
+% addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
+% filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
+% delta_q_neu = ncread(filename,'delta_q');
+% filename = ['CMIP5-ALL_med_9P_DA_fix.nc'];
+% delta_q_med = ncread(filename,'delta_q');
 
 % load file
 filename = ['CMIP5-ALL_neu_9P_DA_fix_best.nc'];
@@ -61,4 +66,3 @@ plot([0 288],[0.4 0.4],'w','LineWidth',5)
 plot([0 288],[0.4 0.4],'k','LineWidth',3)
 ylabel('Normalized RMSE distance from observations')
 title('JJA MED D_i (nine predictors)')
-

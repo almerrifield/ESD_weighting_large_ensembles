@@ -1,4 +1,13 @@
-addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
+%% for paper version
+% addpath /Users/meranna/Desktop/linux_home/python/esd_weighting_large_ensembles/old_weightings
+% filename = ['CMIP5_neu_9P_DA_fix.nc'];
+% sigma_i_neu = ncread(filename,'sigma_i');
+% delta_i_neu = ncread(filename,'delta_i');
+% filename = ['CMIP5-ALL_neu_9P_DA_fix.nc'];
+% sigma_i_all_neu = ncread(filename,'sigma_i');
+% delta_i_all_neu = ncread(filename,'delta_i');
+
+
 % load files
 filename = ['CMIP5_neu_9P_DA_fix_best.nc']; % s2
 sigma_i_neu = ncread(filename,'sigma_i');
@@ -330,4 +339,3 @@ ylim([0.95,1.2])
 yticks([])
 yticklabels('')
 title('Annual large-scale CLIM predictors')
-
